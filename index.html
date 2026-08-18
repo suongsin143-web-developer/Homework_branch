@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoalZone | Football Sports Shop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a href="#home" class="logo"><span>G</span> GoalZone</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+    <nav id="mainNav">
+      <a href="#home">Home</a>
+      <a href="#products">Jerseys</a>
+      <a href="#products">Football Boots</a>
+      <a href="#products">Shorts</a>
+      <a href="#products">Accessories</a>
+      <a href="#sale">Sale</a>
+    </nav>
+    <div class="nav-actions">
+      <button id="searchBtn" class="icon-btn" aria-label="Search">⌕</button>
+      <button id="cartBtn" class="cart-btn">🛒 <span id="cartCount">0</span></button>
+      <button class="login-btn" id="loginBtn">Login</button>
+    </div>
+  </header>
+
+  <div class="search-panel" id="searchPanel">
+    <input id="searchInput" type="search" placeholder="Search jerseys, boots, balls...">
+    <button id="closeSearch">×</button>
+  </div>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">PREMIUM FOOTBALL GEAR</p>
+        <h1>PLAY HARD.<br><span>LOOK GREAT.</span></h1>
+        <p class="hero-text">Premium football gear for players who want to perform at their best.</p>
+        <div class="hero-buttons">
+          <a href="#products" class="btn primary">Shop Now →</a>
+          <a href="#categories" class="btn secondary">Explore Collection</a>
+        </div>
+      </div>
+      <div class="hero-ball">⚽</div>
+    </section>
+
+    <section class="section" id="categories">
+      <div class="section-heading">
+        <div><p class="eyebrow">SHOP BY CATEGORY</p><h2>Find Your Game</h2></div>
+      </div>
+      <div class="category-grid">
+        <button class="category-card" data-category="Jerseys"><span>👕</span><h3>Football Jerseys</h3><small>24 Products</small></button>
+        <button class="category-card" data-category="Boots"><span>👟</span><h3>Football Boots</h3><small>18 Products</small></button>
+        <button class="category-card" data-category="Shorts"><span>🩳</span><h3>Shorts</h3><small>15 Products</small></button>
+        <button class="category-card" data-category="Socks"><span>🧦</span><h3>Socks</h3><small>12 Products</small></button>
+        <button class="category-card" data-category="Balls"><span>⚽</span><h3>Footballs</h3><small>10 Products</small></button>
+        <button class="category-card" data-category="Accessories"><span>🎒</span><h3>Bags & Accessories</h3><small>20 Products</small></button>
+      </div>
+    </section>
+
+    <section class="section products-section" id="products">
+      <div class="section-heading">
+        <div><p class="eyebrow">OUR COLLECTION</p><h2>Featured Products</h2></div>
+        <div class="sort-box">
+          <label for="sortSelect">Sort:</label>
+          <select id="sortSelect">
+            <option value="popular">Popular</option>
+            <option value="newest">Newest</option>
+            <option value="low">Price: Low to High</option>
+            <option value="high">Price: High to Low</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="filter-bar">
+        <select id="categoryFilter">
+          <option value="All">All Categories</option>
+          <option value="Jerseys">Jerseys</option>
+          <option value="Boots">Football Boots</option>
+          <option value="Shorts">Shorts</option>
+          <option value="Socks">Socks</option>
+          <option value="Balls">Footballs</option>
+          <option value="Accessories">Accessories</option>
+        </select>
+        <select id="brandFilter">
+          <option value="All">All Brands</option>
+          <option value="GoalZone">GoalZone</option>
+          <option value="ProKick">ProKick</option>
+          <option value="Elite">Elite</option>
+          <option value="MatchPro">MatchPro</option>
+        </select>
+        <select id="sizeFilter">
+          <option value="All">All Sizes</option>
+          <option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option>
+        </select>
+        <select id="ratingFilter">
+          <option value="0">All Ratings</option>
+          <option value="4">4★ & up</option>
+          <option value="4.5">4.5★ & up</option>
+        </select>
+        <select id="priceFilter">
+          <option value="all">Any Price</option>
+          <option value="50">Under $50</option>
+          <option value="80">Under $80</option>
+          <option value="100">Under $100</option>
+        </select>
+        <button class="reset-btn" id="resetFilters">Reset</button>
+      </div>
+
+      <div id="productGrid" class="product-grid"></div>
+      <p id="emptyState" class="empty-state" hidden>No products match your filters.</p>
+    </section>
+
+    <section class="sale-banner" id="sale">
+      <div><p class="eyebrow">LIMITED TIME OFFER</p><h2>UP TO <span>40% OFF</span></h2><p>Upgrade your football gear today.</p></div>
+      <button class="btn primary" id="saleBtn">Shop Sale →</button>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="about-icon">⚡</div>
+      <div><p class="eyebrow">ABOUT GOALZONE</p><h2>Built For The Beautiful Game.</h2>
+      <p>GoalZone is built for football players who want quality, style, and performance. We provide reliable football gear for training, matches, and everyday football life.</p></div>
+    </section>
+
+    <section class="section reviews">
+      <div class="section-heading"><div><p class="eyebrow">PLAYER FEEDBACK</p><h2>What Players Say</h2></div></div>
+      <div class="review-grid">
+        <article class="review"><div class="avatar">JD</div><h3>John Davis</h3><div class="stars">★★★★★</div><p>"The boots feel light and comfortable. Great grip on the pitch!"</p></article>
+        <article class="review"><div class="avatar">MK</div><h3>Marcus Kim</h3><div class="stars">★★★★★</div><p>"Fast delivery and the jersey quality is excellent. I love the fit."</p></article>
+        <article class="review"><div class="avatar">AR</div><h3>Alex Rivera</h3><div class="stars">★★★★☆</div><p>"GoalZone has become my go-to place for training gear."</p></article>
+        <article class="review"><div class="avatar">TN</div><h3>Tom Nguyen</h3><div class="stars">★★★★★</div><p>"Clean website, easy checkout, and awesome products."</p></article>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <p class="eyebrow">GOALZONE NEWSLETTER</p><h2>Stay in the Game</h2>
+      <p>Get new product updates, exclusive discounts, and football news.</p>
+      <form id="newsletterForm"><input type="email" id="newsletterEmail" placeholder="Enter your email" required><button class="btn primary">Subscribe</button></form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-main">
+      <div><a href="#home" class="logo"><span>G</span> GoalZone</a><p>Play hard. Look great.</p></div>
+      <div><h4>Shop</h4><a href="#products">Jerseys</a><a href="#products">Football Boots</a><a href="#products">Shorts</a><a href="#sale">Sale</a></div>
+      <div><h4>Help</h4><a href="#about">About Us</a><a href="#">FAQ</a><a href="#">Shipping & Returns</a><a href="#">Privacy Policy</a></div>
+      <div><h4>Contact</h4><p>📞 +855 12 345 678</p><p>✉️ hello@goalzone.com</p><div class="socials">f &nbsp; ◎ &nbsp; ▶ &nbsp; ♪</div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 GoalZone. All rights reserved.</span><span>💳 Visa &nbsp; • &nbsp; Mastercard &nbsp; • &nbsp; PayPal</span></div>
+  </footer>
+
+  <div class="modal" id="productModal">
+    <div class="modal-card product-detail" id="productDetail"></div>
+  </div>
+
+  <div class="modal" id="cartModal">
+    <div class="modal-card cart-card">
+      <button class="modal-close" data-close="cartModal">×</button>
+      <h2>Your Cart</h2>
+      <div id="cartItems"></div>
+      <div class="cart-summary"><span>Subtotal</span><strong id="cartTotal">$0.00</strong></div>
+      <div class="cart-actions"><button class="btn secondary" data-close="cartModal">Continue Shopping</button><button class="btn primary" id="checkoutBtn">Proceed to Checkout</button></div>
+    </div>
+  </div>
+
+  <div class="modal" id="checkoutModal">
+    <div class="modal-card checkout-card">
+      <button class="modal-close" data-close="checkoutModal">×</button>
+      <h2>Checkout</h2>
+      <form id="checkoutForm" class="checkout-form">
+        <div class="form-grid">
+          <label>Full Name<input name="name" required placeholder="Your full name"></label>
+          <label>Phone Number<input name="phone" required pattern="[0-9+ ]{8,}" placeholder="+855 12 345 678"></label>
+          <label>Email<input type="email" name="email" required placeholder="you@email.com"></label>
+          <label>City<input name="city" required placeholder="Phnom Penh"></label>
+          <label class="full">Address<textarea name="address" required placeholder="Street, house number..."></textarea></label>
+          <label class="full">Payment Method<select name="payment" required><option value="">Choose payment</option><option>Cash on Delivery</option><option>Visa / Mastercard</option><option>ABA Pay</option><option>PayPal</option></select></label>
+        </div>
+        <div class="checkout-summary"><h3>Order Summary</h3><div id="checkoutSummary"></div><strong id="checkoutTotal"></strong></div>
+        <button class="btn primary full-btn" type="submit">Place Order</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
